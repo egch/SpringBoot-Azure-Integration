@@ -9,12 +9,22 @@ import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 import java.util.Optional;
+
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+
 @Slf4j
 public class HelloHandler {
+
+  private final String message;
+
+  public HelloHandler(@Qualifier("churchill") String message) {
+    this.message = message;
+  }
 
   @FunctionName("hello")
   public HttpResponseMessage execute(
@@ -24,7 +34,7 @@ public class HelloHandler {
     log.info("Azure function invoked");
 
     return request.createResponseBuilder(HttpStatus.OK)
-        .body("Hello from Azure Function!")
+        .body(message)
         .build();
   }
 
