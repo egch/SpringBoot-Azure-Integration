@@ -10,7 +10,7 @@ $  mvn azure-functions:run
 ```
 To check if it works:
 ```shell
-$ curl  http://localhost:7071/api/hello
+$ curl  http://localhost:7071/api/aphorism
 ```
 
 ## Credits

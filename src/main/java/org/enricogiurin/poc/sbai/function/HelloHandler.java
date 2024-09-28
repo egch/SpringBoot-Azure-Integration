@@ -12,16 +12,16 @@ import java.util.Optional;
 import org.springframework.cloud.function.adapter.azure.FunctionInvoker;
 
 
-//@Slf4j
+
 public class HelloHandler extends FunctionInvoker<String, String> {
 
-  @FunctionName("hello")
+  @FunctionName("aphorism")
   public HttpResponseMessage execute(
       @HttpTrigger(name = "request", methods = {HttpMethod.GET,
           HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
       final ExecutionContext context) {
 
-    String message = handleRequest("so stanco", context);
+    String message = handleRequest("", context);
 
     return request.createResponseBuilder(HttpStatus.OK)
         .body(message)
