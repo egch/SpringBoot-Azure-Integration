@@ -16,3 +16,5 @@ $ curl  http://localhost:7071/api/hello
 ## Credits
 * https://learn.microsoft.com/en-us/azure/developer/java/spring-framework/getting-started-with-spring-cloud-function-in-azure
 * https://medium.com/microsoftazure/create-azure-function-with-spring-cloud-function-ab150216d2bd
+* https://github.com/eugenp/tutorials/blob/cbc5cad1613516c8a3307e7ec94b6a07603e1c39/spring-cloud-modules/spring-cloud-functions-azure/pom.xml
+* https://github.com/tzolov/hello-spring-function-azure/tree/di-integration

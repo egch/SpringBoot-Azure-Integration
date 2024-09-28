@@ -9,24 +9,15 @@ import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 import java.util.Optional;
-
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.function.adapter.azure.FunctionInvoker;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-@Component
 
 @Slf4j
-public class HelloHandler {
+public class HelloHandler extends FunctionInvoker<String, String> {
 
-  private final String message;
 
-  public HelloHandler(@Qualifier("churchill") String message) {
-    this.message = message;
-  }
-
-  @FunctionName("hello")
+  @FunctionName("uppercase")
   public HttpResponseMessage execute(
       @HttpTrigger(name = "request", methods = {HttpMethod.GET,
           HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
@@ -34,7 +25,7 @@ public class HelloHandler {
     log.info("Azure function invoked");
 
     return request.createResponseBuilder(HttpStatus.OK)
-        .body(message)
+        .body(handleRequest("so stanco", context))
         .build();
   }
 
