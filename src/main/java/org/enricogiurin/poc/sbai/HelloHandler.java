@@ -1,4 +1,4 @@
-package org.enricogiurin.poc.sbai.function;
+package org.enricogiurin.poc.sbai;
 
 import com.microsoft.azure.functions.ExecutionContext;
 import com.microsoft.azure.functions.HttpMethod;
@@ -9,22 +9,22 @@ import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 import java.util.Optional;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
+import org.springframework.cloud.function.adapter.azure.FunctionInvoker;
 
-@Component
-@Slf4j
-public class HelloHandler {
+
+//@Slf4j
+public class HelloHandler extends FunctionInvoker<String, String> {
 
   @FunctionName("hello")
   public HttpResponseMessage execute(
       @HttpTrigger(name = "request", methods = {HttpMethod.GET,
           HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
       final ExecutionContext context) {
-    log.info("Azure function invoked");
+
+    String message = handleRequest("so stanco", context);
 
     return request.createResponseBuilder(HttpStatus.OK)
-        .body("Hello from Azure Function!")
+        .body(message)
         .build();
   }
 
