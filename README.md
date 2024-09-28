@@ -10,9 +10,10 @@ $  mvn azure-functions:run
 ```
 To check if it works:
 ```shell
-$ curl  http://localhost:7071/api/hello
+$ curl  http://localhost:7071/api/aphorism
 ```
 
 ## Credits
 * https://learn.microsoft.com/en-us/azure/developer/java/spring-framework/getting-started-with-spring-cloud-function-in-azure
 * https://medium.com/microsoftazure/create-azure-function-with-spring-cloud-function-ab150216d2bd
+* https://github.com/tzolov/hello-spring-function-azure
