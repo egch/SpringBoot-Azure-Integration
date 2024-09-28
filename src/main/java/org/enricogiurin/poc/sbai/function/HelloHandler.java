@@ -1,4 +1,4 @@
-package org.enricogiurin.poc.sbai;
+package org.enricogiurin.poc.sbai.function;
 
 import com.microsoft.azure.functions.ExecutionContext;
 import com.microsoft.azure.functions.HttpMethod;
