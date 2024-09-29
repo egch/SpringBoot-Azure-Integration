@@ -9,11 +9,16 @@ import com.microsoft.azure.functions.annotation.AuthorizationLevel;
 import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 import java.util.Optional;
-import org.springframework.cloud.function.adapter.azure.FunctionInvoker;
+import lombok.RequiredArgsConstructor;
+import org.enricogiurin.poc.sbai.component.AphorismGenerator;
+import org.springframework.stereotype.Component;
 
 
+@Component
+@RequiredArgsConstructor
+public class HelloHandler {
 
-public class HelloHandler extends FunctionInvoker<String, String> {
+  private final AphorismGenerator aphorismGenerator;
 
   @FunctionName("aphorism")
   public HttpResponseMessage execute(
@@ -21,7 +26,7 @@ public class HelloHandler extends FunctionInvoker<String, String> {
           HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
       final ExecutionContext context) {
 
-    String message = handleRequest("", context);
+    String message = aphorismGenerator.apply("");
 
     return request.createResponseBuilder(HttpStatus.OK)
         .body(message)
