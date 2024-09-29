@@ -20,7 +20,7 @@
 		<spring-boot-thin-layout.version>1.0.28.RELEASE</spring-boot-thin-layout.version>
 
 		<!-- Spring Boot start class! WARING: correct class must be set! -->
-		<start-class>org.enricogiurin.poc.sbai.MainApplication</start-class>
+		<start-class>example.Application</start-class>
 
 		<!-- AZURE FUNCTION CONFIG -->
 		<azure.functions.maven.plugin.version>1.22.0</azure.functions.maven.plugin.version>
