@@ -20,7 +20,7 @@ public class HelloHandler {
 
   private final AphorismGenerator aphorismGenerator;
 
-  @FunctionName("aphorism")
+  @FunctionName("egch-aphorism")
   public HttpResponseMessage execute(
       @HttpTrigger(name = "request", methods = {HttpMethod.GET,
           HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,

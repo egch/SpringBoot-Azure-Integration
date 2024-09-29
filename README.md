@@ -10,7 +10,14 @@ $  mvn azure-functions:run
 ```
 To check if it works:
 ```shell
-$ curl  http://localhost:7071/api/aphorism
+$ curl  http://localhost:7071/api/egch-aphorism
+```
+
+### Deploying on Azure
+Before proceeding, update the properties related to the Azure region and your service plan accordingly.
+```shell
+$ az login
+$ mvn azure-functions:deploy
 ```
 
 ## Credits
