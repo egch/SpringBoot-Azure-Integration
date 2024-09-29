@@ -24,11 +24,11 @@
 
 		<!-- AZURE FUNCTION CONFIG -->
 		<azure.functions.maven.plugin.version>1.22.0</azure.functions.maven.plugin.version>
-		<functionAppName>org.enricogiurin.poc.sbai.MainApplication</functionAppName>
-		<functionAppRegion>westus</functionAppRegion>
-		<functionResourceGroup>sample-resource-group</functionResourceGroup>
-		<functionAppServicePlanName>sample-service-plan</functionAppServicePlanName>
-		<functionPricingTier>EP1</functionPricingTier>
+		<functionAppName>egch-aphorism</functionAppName>
+		<functionAppRegion>switzerlandnorth</functionAppRegion>
+		<functionResourceGroup>springboot-azure-integration</functionResourceGroup>
+		<functionAppServicePlanName>ASP-springbootazureintegration-be22</functionAppServicePlanName>
+		<functionPricingTier>Y1</functionPricingTier>
 	</properties>
 
 
