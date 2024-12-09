@@ -1,2 +1,11 @@
 aphorism:
   path: sentences
+
+
+spring:
+  cloud:
+    azure:
+      storage:
+        blob:
+          account-name: egchsb
+          endpoint: https://egchsb.blob.core.windows.net
